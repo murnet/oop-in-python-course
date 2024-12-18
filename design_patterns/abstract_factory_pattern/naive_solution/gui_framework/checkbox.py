@@ -1,7 +1,8 @@
-from abstract_factory_pattern.naive_solution.gui_framework.ui_component import (
+from abc import abstractmethod
+from design_patterns.abstract_factory_pattern.naive_solution.gui_framework.ui_component import (
     UIComponent,
 )
-from abc import abstractmethod
+
 
 class Checkbox(UIComponent):
     """Interface for a checkbox UI component"""

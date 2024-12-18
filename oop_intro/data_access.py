@@ -2,6 +2,7 @@
 
 # Let's say we have a User class that defines what data a user should have
 
+
 class User:
     def __init__(self, username, email, password):
         self.username = username
@@ -12,6 +13,7 @@ class User:
         print(
             f"Sending message to {user.username}: Hi {user.username}, it's {self.username} ;)"
         )
+
 
 user1 = User("dantheman", "dan@gmail.com", "123")
 user2 = User("batman", "bat@gmail.com", "abc")
@@ -28,6 +30,7 @@ print(user1.email)
 # 1. The traditional way: make the data private and use getters and setters:
 
 from datetime import datetime
+
 
 class User2:
     def __init__(self, username, email, isAdmin=False):
@@ -47,6 +50,7 @@ class User2:
     def setEmail(self, newEmail):
         if "@" in newEmail:
             self._email = newEmail
+
 
 user1 = User2("dantheman", "dan@gmail.com", True)
 print(user1._email)  # NAUGHTY!! As responsible Python devs, we are expected to do this:
@@ -69,7 +73,8 @@ print(user1.getEmail())
 
 # 2. Using properties
 
-# this is the recommended approach in python. let's see why...
+# This is the recommended approach in python. let's see why...
+
 
 class User3:
     def __init__(self, username, email, isAdmin=False):
@@ -91,17 +96,6 @@ class User3:
         else:
             raise ValueError("Invalid email: no '@'")
 
-# convention: get + attr name
-def getEmail(self, isAdmin):
-    # Advantage of getter: if we need to make changes to way data is accessed, we can do it just here -- not everywhere we are accessing email
-    if isAdmin:
-        return self._email
-    return None  # Explicitly returns None to indicate no access
-
-# convention: set + attr name
-def setEmail(self, newEmail):
-    if "@" in newEmail:
-        self._email = newEmail
 
 user1 = User3("dantheman", "dan@gmail.com", True)
 print(user1.email)
@@ -116,7 +110,8 @@ print(user1.email)
 
 # static attributes and methods
 
-# Let's say that we want to keep track of the total number of user objects that have been created. To do that, we can create a "static" attribute on the User class. Let me show you what this looks like, then we will discuss what's going on:
+# Let's say that we want to keep track of the total number of user objects that have been created. To do that, we can create a "static" attribute on the User class:
+
 
 class User4:
     total_users_created = (
@@ -143,6 +138,7 @@ class User4:
             self._email = newEmail
         else:
             raise ValueError("Invalid email: no '@'")
+
 
 print(User4.total_users_created)
 user = User4("dantheman", "dan@gmail.com", True)

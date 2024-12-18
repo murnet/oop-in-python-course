@@ -1,30 +1,19 @@
-# Object-oriented programming in Python Course
+# Python OOP: Object Oriented Programming From Beginner to Pro
 
-This is the code repo containing all of the examples covered in the course.
+This is the code repo containing all of the examples covered in the course. I strongly recommend you to code out all of the examples as you follow this course.
 
-## Below is some extra material that I didn't add to the course that you may find useful...
+## To download and use this repo:
 
-Run as module (so imports work as intended) with `-m`, e.g.: `python -m design_patterns.adapter_pattern.good_solution.main`
+1. Open up a terminal
+2. Download the repo to your computer with `git clone https://github.com/DoableDanny/oop-in-python-course.git`
+3. Open up the project with your text editor, e.g. VS Code
 
-### How to create a Python virtual environment
+Example commands for how to run the examples:
 
-1. `python -m venv venv`
+- `python -m solid.single_responsibility_principle.naive_solution`
+- `python -m design_patterns.abstract_factory_pattern.naive_solution.app.main`
 
-2. - Windows: `venv\Scripts\activate`
-   - Mac or Linux: `source venv/bin/activate`
-
-3. Then can `pip install <package-name>` to your virtual environment (so packages are installed to this project, and not installed globally to your system)
-
-### To recreate this project's Python virtual env:
-
-1. `python -m venv venv` # Create a virtual environment named 'venv'
-
-2. `source venv/bin/activate` # Activate the virtual environment on macOS/Linux
-or use the following on Windows
-
-3. `venv\Scripts\activate`
-
-4.`pip install -r requirements.txt` # Install dependencies from requirements.txt
+## Below is some extra material that I didn't add to the course that you may find useful as you advance through the course...
 
 ## Types
 
@@ -32,7 +21,7 @@ Programming languages use different **type systems** to manage how data is class
 
 ---
 
-### **1. Static vs. Dynamic Typing**
+### 1. Static vs. Dynamic Typing
 
 This distinction is about **when type checking** is performed—**at compile-time or runtime**.
 
@@ -63,7 +52,7 @@ This distinction is about **when type checking** is performed—**at compile-tim
 
 ---
 
-### **2. Strong vs. Weak Typing**
+### 2. Strong vs. Weak Typing
 
 This distinction deals with **how strictly** the language enforces types.
 
@@ -93,7 +82,7 @@ This distinction deals with **how strictly** the language enforces types.
 
 ---
 
-### **3. Nominal vs. Structural Typing**
+### 3. Nominal vs. Structural Typing
 
 This distinction is about **how compatibility** between types is determined.
 
@@ -129,7 +118,7 @@ This distinction is about **how compatibility** between types is determined.
 
 ---
 
-### **4. Manifest vs. Inferred Typing**
+### 4. Manifest vs. Inferred Typing
 
 This distinction focuses on whether **types need to be explicitly declared** by the programmer or are inferred by the compiler.
 
@@ -159,7 +148,7 @@ This distinction focuses on whether **types need to be explicitly declared** by 
 
 ---
 
-### **5. Duck Typing**
+### 5. Duck Typing
 
 This is a type system where **an object’s compatibility** is determined by the presence of certain methods or properties, rather than its actual type.
 
@@ -187,7 +176,7 @@ This is a type system where **an object’s compatibility** is determined by the
 
 ---
 
-### **6. Gradual Typing**
+### 6. Gradual Typing
 
 This is a mix of **static and dynamic typing**. The programmer can choose whether to use types, and the language can optionally enforce type checking.
 
@@ -206,7 +195,7 @@ This is a mix of **static and dynamic typing**. The programmer can choose whethe
 
 ---
 
-### **Summary Table of Typing Systems**
+### Summary Table of Typing Systems
 
 | **Type System**        | **Description**                                     | **Examples**                            |
 | ---------------------- | --------------------------------------------------- | --------------------------------------- |
@@ -223,31 +212,7 @@ This is a mix of **static and dynamic typing**. The programmer can choose whethe
 
 Different languages adopt different **type systems** based on their design goals. Some languages prioritize **safety and predictability** (e.g., Java, C#), while others emphasize **flexibility and ease of use** (e.g., Python, JavaScript). Understanding these different type systems helps you pick the right tool for the job and write more effective code.
 
-## Type checking with mypy
-
-1. `pip install mypy`
-2. Configure pylance linter in settings.json:
-   ```json
-   {
-     "python.analysis.typeCheckingMode": "basic",
-     "python.analysis.diagnosticSeverityOverrides": {
-       "reportUnknownMemberType": "none",
-       "reportUnknownVariableType": "none"
-     }
-   }
-   ```
-3. `mypy script.py`
-
-Now we can use python type hints and get errors from mypy linter while developing:
-
-```python
-email: str = "dan@gmail.com"
-email = 1444
-```
-
-=> error: Incompatible types in assignment (expression has type "int", variable has type "str")
-
-### **@abstractmethod -- What Happens Under the Hood?**
+## **@abstractmethod -- What Happens Under the Hood?**
 
 When you use the **`@abstractmethod` decorator**, Python makes a few internal checks and changes. Here’s a step-by-step breakdown of what it does:
 
@@ -264,7 +229,7 @@ When you use the **`@abstractmethod` decorator**, Python makes a few internal ch
 
 ---
 
-### **Code Explanation of `@abstractmethod` Internals**
+### Code Explanation of `@abstractmethod` Internals
 
 Here’s a minimal version of what **`@abstractmethod`** does internally.
 
@@ -281,7 +246,7 @@ This **decorator sets the `__isabstractmethod__` attribute** on the method, mark
 
 ---
 
-### **How Python Checks Abstract Methods in the Class**
+## How Python Checks Abstract Methods in the Class
 
 When Python defines a class that inherits from `ABC`, it checks **all the methods** to see if **`__isabstractmethod__` is `True`**.
 
@@ -308,7 +273,7 @@ print(Shape.calculate_area.__isabstractmethod__)  # Output: True
 
 ---
 
-### **What Happens if the Abstract Method Is Not Implemented?**
+### What Happens if the Abstract Method Is Not Implemented?
 
 If you try to **instantiate a subclass** without implementing the abstract method, Python raises a **`TypeError`**.
 
@@ -323,7 +288,7 @@ This behavior is enforced by **`ABCMeta`**, the metaclass that `ABC` uses to def
 
 ---
 
-### **Summary**
+### Summary
 
 - **`@abstractmethod`** marks a method with **`__isabstractmethod__ = True`**.
 - Python uses **`ABCMeta`** (a metaclass) to **ensure abstract methods are implemented** in subclasses.

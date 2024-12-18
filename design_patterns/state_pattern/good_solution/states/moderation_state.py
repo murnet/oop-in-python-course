@@ -1,6 +1,9 @@
-from states.state import State
-from states.published_state import PublishedState
-from user_roles import UserRoles
+from design_patterns.state_pattern.good_solution.states.state import State
+from design_patterns.state_pattern.good_solution.states.published_state import (
+    PublishedState,
+)
+from design_patterns.state_pattern.good_solution.user_roles import UserRoles
+
 
 class ModerationState(State):
     def __init__(self, document):

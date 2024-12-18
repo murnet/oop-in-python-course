@@ -1,4 +1,7 @@
-from states.draft_state import DraftState
+from design_patterns.state_pattern.good_solution.states.draft_state import (
+    DraftState,
+)
+
 
 class Document:
     def __init__(self, current_user_role):

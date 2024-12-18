@@ -1,5 +1,6 @@
-from document_states import DocumentStates
-from user_roles import UserRoles
+from design_patterns.state_pattern.naive_solution.document_states import DocumentStates
+from design_patterns.state_pattern.naive_solution.user_roles import UserRoles
+
 
 class Document:
     def __init__(self, state: DocumentStates, current_user_role: UserRoles):

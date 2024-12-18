@@ -1,3 +1,5 @@
+# Run with: `python -m design_patterns.adapter_pattern.good_solution.main`
+
 from design_patterns.adapter_pattern.naive_solution.video import Video
 from design_patterns.adapter_pattern.naive_solution.video_editor import VideoEditor
 from design_patterns.adapter_pattern.naive_solution.black_and_white_color import (

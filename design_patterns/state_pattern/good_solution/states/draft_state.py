@@ -1,5 +1,8 @@
-from states.state import State
-from states.moderation_state import ModerationState
+from design_patterns.state_pattern.good_solution.states.state import State
+from design_patterns.state_pattern.good_solution.states.moderation_state import (
+    ModerationState,
+)
+
 
 class DraftState(State):
     def __init__(self, document):

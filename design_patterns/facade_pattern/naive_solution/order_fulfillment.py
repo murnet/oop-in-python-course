@@ -1,4 +1,5 @@
-from inventory import Inventory
+from design_patterns.facade_pattern.naive_solution.inventory import Inventory
+
 
 class OrderFulfillment:
     def __init__(self, inventory: Inventory):

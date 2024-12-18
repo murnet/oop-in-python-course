@@ -1,17 +1,19 @@
-# App initialization
-from abstract_factory_pattern.good_solution.framework.mac_ui_component_factory import (
+# This exemplifies the entry point to our application, where app setup occurs.
+# Run with: `python -m design_patterns.abstract_factory_pattern.good_solution.main`
+
+from design_patterns.abstract_factory_pattern.good_solution.framework.mac_ui_component_factory import (
     MacUIComponentFactory,
 )
-from abstract_factory_pattern.good_solution.framework.ui_component_factory import (
+from design_patterns.abstract_factory_pattern.good_solution.framework.ui_component_factory import (
     UIComponentFactory,
 )
-from abstract_factory_pattern.good_solution.framework.windows_ui_component_factory import (
+from design_patterns.abstract_factory_pattern.good_solution.framework.windows_ui_component_factory import (
     WindowsUIComponentFactory,
 )
-from abstract_factory_pattern.good_solution.user_settings_form import (
+from design_patterns.abstract_factory_pattern.good_solution.user_settings_form import (
     UserSettingsForm,
 )
-from abstract_factory_pattern.naive_solution.gui_framework.operating_system_type import (
+from design_patterns.abstract_factory_pattern.naive_solution.gui_framework.operating_system_type import (
     OperatingSystemType,
 )
 

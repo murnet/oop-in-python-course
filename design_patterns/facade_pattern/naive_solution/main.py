@@ -1,11 +1,13 @@
 # This file shows all of the steps that every client would have to do to create an order.
-# Run this on the terminal: `python projects/facade_pattern/naive_solution/main.py`
+# Run this on the terminal: `python -m design_patterns.facade_pattern.naive_solution.main`
 
-from order_request import OrderRequest
-from authenticator import Authenticator
-from inventory import Inventory
-from payment import Payment
-from order_fulfillment import OrderFulfillment
+from design_patterns.facade_pattern.naive_solution.order_request import OrderRequest
+from design_patterns.facade_pattern.naive_solution.authenticator import Authenticator
+from design_patterns.facade_pattern.naive_solution.inventory import Inventory
+from design_patterns.facade_pattern.naive_solution.payment import Payment
+from design_patterns.facade_pattern.naive_solution.order_fulfillment import (
+    OrderFulfillment,
+)
 
 # Order request contains info that user has submitted when requesting to make an order
 order_req = OrderRequest()

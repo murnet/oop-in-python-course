@@ -1,7 +1,10 @@
-from ..naive_solution.authenticator import Authenticator
-from ..naive_solution.inventory import Inventory
-from ..naive_solution.payment import Payment
-from ..naive_solution.order_fulfillment import OrderFulfillment
+from design_patterns.facade_pattern.naive_solution.authenticator import Authenticator
+from design_patterns.facade_pattern.naive_solution.inventory import Inventory
+from design_patterns.facade_pattern.naive_solution.payment import Payment
+from design_patterns.facade_pattern.naive_solution.order_fulfillment import (
+    OrderFulfillment,
+)
+
 
 class OrderService:
     def create_order(self, order_req):

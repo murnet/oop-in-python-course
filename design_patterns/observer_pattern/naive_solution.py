@@ -12,10 +12,12 @@ class Sheet2:
         print(f"New total: {sum}")
         return self.total
 
+
 # Spreadsheet 1: contains the data source and bar chart
 class BarChart:
     def render(self, values: list[float]) -> None:
         print("Rendering bar chart with new values")
+
 
 class DataSource:
     def __init__(self) -> None:
@@ -42,6 +44,7 @@ class DataSource:
 
     def removeDependent(self, dependent: object) -> None:
         self.dependents.remove(dependent)
+
 
 # Example useage
 sheet = Sheet2()

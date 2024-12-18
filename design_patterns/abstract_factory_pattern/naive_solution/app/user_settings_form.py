@@ -1,19 +1,20 @@
-from abstract_factory_pattern.naive_solution.gui_framework.operating_system_type import (
+from design_patterns.abstract_factory_pattern.naive_solution.gui_framework.operating_system_type import (
     OperatingSystemType,
 )
 
-from abstract_factory_pattern.naive_solution.gui_framework.windows.windows_button import (
+from design_patterns.abstract_factory_pattern.naive_solution.gui_framework.windows.windows_button import (
     WindowsButton,
 )
-from abstract_factory_pattern.naive_solution.gui_framework.windows.windows_checkbox import (
+from design_patterns.abstract_factory_pattern.naive_solution.gui_framework.windows.windows_checkbox import (
     WindowsCheckbox,
 )
-from abstract_factory_pattern.naive_solution.gui_framework.mac.mac_button import (
+from design_patterns.abstract_factory_pattern.naive_solution.gui_framework.mac.mac_button import (
     MacButton,
 )
-from abstract_factory_pattern.naive_solution.gui_framework.mac.mac_checkbox import (
+from design_patterns.abstract_factory_pattern.naive_solution.gui_framework.mac.mac_checkbox import (
     MacCheckbox,
 )
+
 
 class UserSettingsForm:
     def render(self, os: OperatingSystemType):

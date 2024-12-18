@@ -20,6 +20,7 @@ class BankAccount:
         """Check if the interest rate is within a valid range (0 to 5%)."""
         return 0 <= rate <= 5
 
+
 # Example usage
 account = BankAccount("Alice", 500)
 
@@ -30,21 +31,8 @@ account.deposit(200)  # Output: Alice's new balance: $700
 print(BankAccount.is_valid_interest_rate(3))  # Output: True
 print(BankAccount.is_valid_interest_rate(10))  # Output: False
 
-class Test:
-    # i want to see if properties still work with private attributes
-    def __init__(self, balance) -> None:
-        self.__balance = balance
+# Example:
 
-    @property
-    def balance(self):
-        return self.__balance
-
-    @balance.setter
-    def balance(self, balance):
-        self.__balance = balance
-
-    def __sayHi(self):
-        print("Hi")
 
 class Person:
     def __init__(self, name, email, address) -> None:
@@ -56,6 +44,7 @@ class Person:
         print(
             f"Name: {self.name}; Email: {self._email}; Address: {self.__home_address}"
         )
+
 
 person = Person("danny", "danny@gmail.com", "200 Springfield way, UK")
 person.print_details()  # Name: danny; Email: danny@gmail.com; Address: 200 Springfield way, UK
